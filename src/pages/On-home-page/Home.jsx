@@ -9,8 +9,7 @@ export default function Home() {
    return (
       <div className='HomePG
                      p-2 
-                     
-                     outline outline-yellow-500 outline-4
+                     border border-yellow-500
                      grid 
                      grid-cols-2
                      [&_div]:outline
