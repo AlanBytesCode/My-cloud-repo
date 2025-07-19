@@ -4,13 +4,5 @@ import { resolve } from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/My-cloud-repo/',
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        404: resolve(__dirname, 'index.html')
-      }
-    }
-  }
+  base: '/My-cloud-repo/'
 })
