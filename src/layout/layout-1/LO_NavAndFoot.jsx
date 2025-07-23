@@ -28,8 +28,8 @@ export default function LO_NavAndFoot() {
                            
                            fixed w-[55vw] h-full
                            top-0 left-0
-                           transition-all duration-300
-                           ${cond ? 'left-0' : 'left-[-100%]'}
+                           transition-all duration-700
+                           ${cond ? 'left-0 opacity-[100%]' : 'left-[-100%] opacity-[0%]'}
                            backdrop-blur-[15px]
                            `}>
                <div className='sticky top-10 text-3xl flex flex-col gap-4 items-center'>
