@@ -17,7 +17,7 @@ export default function Gallery() {
    
    return (
       <div className='GalleryPG
-                     
+                     h-[150vh]
       '>
          <div>{condition ? Object.entries(info).map((elem, idx) => <div key={idx}>{elem}</div>) : 'Loading'}</div>
          
