@@ -19,7 +19,7 @@ export default function LO_NavAndFoot() {
                         
          '>
          <NavBar infoFromChild={setCond} />
-         <div className='Wrapper py-8 relative  overflow-x-hidden'>
+         <div className='Wrapper pt-8 relative  overflow-x-hidden'>
             <Outlet />
             <div className={`SidebarElm bg-[#3a4e648c]
                            fixed w-[55vw] h-full

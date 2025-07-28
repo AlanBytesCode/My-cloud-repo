@@ -4,13 +4,24 @@ export default function Home() {
     const [State, setState] = useState()
     const elmRef = useRef(null)
 
-    function fadeIn(ref) {
+
+    useEffect(() => {
         let observer = new IntersectionObserver((entries) => {
-            console.log(entries[0].target);
+            if (entries[0].isIntersecting) {
+                for(let idx of entries[0].target.children){
+                    for(let idex of idx.children){
+                        console.log(idex)
+                    }
+                }
+            }
         })
 
-        observer.observe(ref)
-    }
+        observer.observe(elmRef.current)
+
+        return () => { 
+            observer.disconnect() 
+            console.log('disconnected') }
+    }, [])
 
 
     return (
@@ -20,15 +31,19 @@ export default function Home() {
                                     gap-16
         '>
             <div>
-                <div className='TextElm_1 text-4xl text-indigo-400
+                <div className='TextElm_1 
+                                text-3xl
+                                lg:text-6xl 
+                                text-indigo-400
                                 text-center 
                 '>Welcome.
                 </div>
             </div>
-            <div onLoad={() => { fadeIn(elmRef.current) }} className='
+            <div    className='
                         p-2 
                         bg-[linear-gradient(to_bottom,transparent_5%,#8664fa_90%,#fae964,#00edcd,transparent)]
-                        
+                        [mask-image:linear-gradient(to_right,transparent_4%,red,transparent_96%)]
+        
                         transition
                         transform duration-300
                         min-w-full
@@ -38,9 +53,7 @@ export default function Home() {
             '>
                 <div className='font-semibold
                                 text-2xl
-                        
-                        [mask-image:blur(2px)] 
-                        [mask-size:100%_100%]
+                                lg:text-4xl
                                 text-black
                                 text-center 
                                 pt-4
@@ -63,7 +76,8 @@ export default function Home() {
                             [mask-image:linear-gradient(transparent,#db2323)] 
                             [mask-repeat:no-repeat] 
                             [mask-size:100%_100%]
-            '>Hi.
+            '>
+                <div>Hi...</div>
             </div>
 
         </div>
