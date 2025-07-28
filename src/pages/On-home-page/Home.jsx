@@ -1,148 +1,73 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export default function Home() {
-const [State, setState] = useState()
+    const [State, setState] = useState()
+    const elmRef = useRef(null)
+
+    function fadeIn(ref) {
+        let observer = new IntersectionObserver((entries) => {
+            console.log(entries[0].target);
+        })
+
+        observer.observe(ref)
+    }
 
 
-   return (
-      <div className='grid 
-                     grid-cols-1
-                     gap-4
-                     items-center
-                     justify-items-center
-      '>
-         <div className='bg-[#3550a08c]
+    return (
+        <div ref={elmRef} className='HomePG
+                                    grid 
+                                    grid-cols-1
+                                    gap-16
+        '>
+            <div>
+                <div className='TextElm_1 text-4xl text-indigo-400
+                                text-center 
+                '>Welcome.
+                </div>
+            </div>
+            <div onLoad={() => { fadeIn(elmRef.current) }} className='
                         p-2 
-                        rounded-[0.5rem]
-                        ring-1
-                        bg-[url("img1.jpg")]
-                        bg-cover
-                        bg-center
-                        bg-no-repeat
+                        bg-[linear-gradient(to_bottom,transparent_5%,#8664fa_90%,#fae964,#00edcd,transparent)]
+                        
+                        transition
+                        transform duration-300
+                        min-w-full
+                        h-[clamp(3rem,50vh,8rem)]
+                        select-none 
+                        relative
+            '>
+                <div className='font-semibold
+                                text-2xl
+                        
+                        [mask-image:blur(2px)] 
+                        [mask-size:100%_100%]
+                                text-black
+                                text-center 
+                                pt-4
+                                absolute
+                                top-0
+                                inset-0
+                                
+                '>To Your <br /> Premium Experience
+                </div>
+            </div>
 
-                        shadow-[0px_0px_30px_#3550a0]
-                        transition
-                        transform duration-300
-                        active:scale-105
-                        active:shadow-[0px_3px_10px_#7c3696]
-                        active:ring-fuchsia-400
-                        min-w-full
-                        h-[clamp(3rem,30vh,8rem)]
-                        select-none
-                     
-      '>
-            1
-         </div>
-         <div className='bg-[#3550a08c]
-                        p-2 
-                        rounded-[0.5rem]
-                        ring-1
-                        bg-[url("img2.jpg")]
-                        bg-cover
-                        bg-center
-                        bg-no-repeat
-                        
-                        shadow-[0px_0px_10px_#3550a0]
-                        transition
-                        transform duration-300
-                        active:scale-105
-                        active:ring-fuchsia-400
-                        active:shadow-[0px_3px_30px_#7c3696]
-                        min-w-full
-                        h-[clamp(3rem,30vh,8rem)]
-                        select-none
-                     
-      '>
-            2
-         </div>
-         <div className='bg-[#3550a08c]
-                        p-2 
-                        rounded-[0.5rem]
-                        ring-1
-                        bg-[url("img3.jpg")]
-                        bg-cover
-                        bg-center
-                        bg-no-repeat
-                        
-                        shadow-[0px_0px_10px_#3550a0]
-                        transition
-                        transform duration-300
-                        active:scale-105
-                        active:ring-fuchsia-400
-                        active:shadow-[0px_3px_30px_#7c3696]
-                        min-w-full
-                        h-[clamp(3rem,30vh,8rem)]
-                        select-none
-                     
-      '>
-            2
-         </div>
-         <div className='bg-[#3550a08c]
-                        p-2 
-                        rounded-[0.5rem]
-                        ring-1
-                        bg-[url("img4.jpg")]
-                        bg-cover
-                        bg-center
-                        bg-no-repeat
-                        
-                        shadow-[0px_0px_10px_#3550a0]
-                        transition
-                        transform duration-300
-                        active:scale-105
-                        active:ring-fuchsia-400
-                        active:shadow-[0px_3px_30px_#7c3696]
-                        min-w-full
-                        h-[clamp(3rem,30vh,8rem)]
-                        select-none
-                     
-      '>
-            2
-         </div>
-         <div className='bg-[#3550a08c]
-                        p-2 
-                        rounded-[0.5rem]
-                        ring-1
-                        bg-[url("img5.jpg")]
-                        bg-cover
-                        bg-center
-                        bg-no-repeat
-                        
-                        shadow-[0px_0px_10px_#3550a0]
-                        transition
-                        transform duration-300
-                        active:scale-105
-                        active:ring-fuchsia-400
-                        active:shadow-[0px_3px_30px_#7c3696]
-                        min-w-full
-                        h-[clamp(3rem,30vh,8rem)]
-                        select-none
-                     
-      '>
-            2
-         </div>
-         <div className='bg-[#3550a08c]
-                        p-2 
-                        rounded-[0.5rem]
-                        ring-1
-                        bg-[url("img6.jpg")]
-                        bg-cover
-                        bg-center
-                        bg-no-repeat
-                        
-                        shadow-[0px_0px_10px_#3550a0]
-                        transition
-                        transform duration-300
-                        active:scale-105
-                        active:ring-fuchsia-400
-                        active:shadow-[0px_3px_30px_#7c3696]
-                        min-w-full
-                        h-[clamp(3rem,30vh,8rem)]
-                        select-none
-                     
-      '>
-            2
-         </div>
-      </div>
-   )
+            <div className='min-h-[70vh] 
+                            bg-[url("pics/bg1.jpg")]
+                            bg-cover
+                            bg-no-repeat
+                            bg-center
+                            flex items-center justify-center
+                            text-4xl 
+                             
+                            [mask-image:linear-gradient(transparent,#db2323)] 
+                            [mask-repeat:no-repeat] 
+                            [mask-size:100%_100%]
+            '>Hi.
+            </div>
+
+        </div>
+    )
 }
+            //  <div className='bg-[url("pics/bg1.jpg")] h-full w-full border-4 border-green-600'></div>
+                     // bg-gradient-to-b from-amber-300 from-100%

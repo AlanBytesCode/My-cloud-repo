@@ -14,7 +14,6 @@ export default function Gallery() {
    }
    
    
-   
    return (
       <div className='GalleryPG
                      h-[150vh]

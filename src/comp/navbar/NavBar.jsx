@@ -16,9 +16,12 @@ export default function NavBar({ infoFromChild }) {
                      sticky top-0
                      z-10
       ">
-         <button onClick={ () => { clickFunc() } }>Menu</button>
+         <button onClick={ () => { clickFunc() }}
+                  className='bg-indigo-800 active:bg-pink-400
+                           
+         '>Menu</button>
          <img src='#' alt='img'  className=' outline w-16'/>
-         <ul className='flex flex-row gap-2 '>
+         <ul className='flex flex-row gap-2 text-indigo-300 '>
             <li>
                <Link className=' flex size-full active:text-fuchsia-300 transition-all duration-200' to='/'>Home</Link>
             </li>

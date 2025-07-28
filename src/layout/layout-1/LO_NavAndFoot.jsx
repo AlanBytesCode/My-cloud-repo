@@ -19,20 +19,16 @@ export default function LO_NavAndFoot() {
                         
          '>
          <NavBar infoFromChild={setCond} />
-         <div className='Wrapper flex flex-row relative'>
-            <div className='outletWrapper p-4 flex-auto'>
-               <Outlet />
-            </div>
+         <div className='Wrapper py-8 relative  overflow-x-hidden'>
+            <Outlet />
             <div className={`SidebarElm bg-[#3a4e648c]
-                           
-                           
                            fixed w-[55vw] h-full
                            top-0 left-0
-                           transition-all duration-700
+                           transition-all duration-500
                            ${cond ? 'left-0 opacity-[100%]' : 'left-[-100%] opacity-[0%]'}
                            backdrop-blur-[15px]
                            `}>
-               <div className='sticky top-10 text-3xl flex flex-col gap-4 items-center'>
+               <div className='InnerSidebarElm sticky top-10 text-3xl flex flex-col gap-4 items-center'>
 
                   <ul>
                      <li>Link1</li>
@@ -43,6 +39,7 @@ export default function LO_NavAndFoot() {
                   <ul>
                      <li>Link1</li>
                   </ul>
+                  
                </div>
             </div>
          </div>
